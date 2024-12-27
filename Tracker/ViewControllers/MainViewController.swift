@@ -16,22 +16,20 @@ final class MainViewController: UIViewController {
         dateButton.setTitleColor(.black, for: .normal)
         dateButton.layer.cornerRadius = 8
         dateButton.translatesAutoresizingMaskIntoConstraints = false
-        //TODO: зделать экшн
         return dateButton
     }()
     private let addTrackerButton: UIButton = {
-        var addTrackerButton = UIButton()
-        addTrackerButton.setImage(UIImage(named: "plus"), for: .normal)
-        
-        addTrackerButton.translatesAutoresizingMaskIntoConstraints = false
-        //TODO: зделать экшн
+        let addTrackerButton = UIButton(type: .custom)
+        let config = UIImage.SymbolConfiguration(weight: .bold)
+        let image = UIImage(systemName: "plus")?.withConfiguration(config)
+        addTrackerButton.tintColor = .ypBlack
+        addTrackerButton.setImage(image, for: .normal)
         return addTrackerButton
     }()
     private let trackerTitle: UILabel = {
         let label = UILabel()
         label.text = "Трекеры"
         label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-        
         label.textColor = .ypBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -65,12 +63,11 @@ final class MainViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
+    
     //MARK: Private Methods
     
     /// add subView on MainView
     private func addSubView() {
-        view.addSubview(addTrackerButton)
-        view.addSubview(dateButton)
         view.addSubview(trackerTitle)
         view.addSubview(searchBar)
         view.addSubview(nonTrackers)
@@ -79,18 +76,11 @@ final class MainViewController: UIViewController {
     /// setting constraint
     private func setupConstrait() {
         NSLayoutConstraint.activate([
-            dateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            dateButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             dateButton.widthAnchor.constraint(equalToConstant: 77),
             dateButton.heightAnchor.constraint(equalToConstant: 34),
             
-            addTrackerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 6),
-            addTrackerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
-            addTrackerButton.heightAnchor.constraint(equalToConstant: 42),
-            addTrackerButton.widthAnchor.constraint(equalToConstant: 42),
-            
             trackerTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            trackerTitle.topAnchor.constraint(equalTo: addTrackerButton.bottomAnchor, constant: 1),
+            trackerTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
             
             searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -102,17 +92,51 @@ final class MainViewController: UIViewController {
             
         ])
     }
-
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         setupMainView()
     }
-   
+    
     private func setupMainView(){
         view.backgroundColor = .ypWhite
         addSubView()
         setupConstrait()
     }
+    
+    /// фунция содержит элементы NavBar и таргеты кнопок
+    private func setupNavBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: addTrackerButton)
+        
+        addTrackerButton.addTarget(
+            self,
+            action: #selector(addTrackerButtonTap),
+            for: .touchUpInside
+        )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: dateButton)
+        
+        dateButton.addTarget(
+            self,
+            action: #selector(dateButtonTap),
+            for: .touchUpInside
+        )
+    }
+    
+    @objc func addTrackerButtonTap() {
+        let testViewController = TestButtonCon()
+        navigationController?.pushViewController(
+            testViewController,
+            animated: false
+        )
+    }
+    @objc func dateButtonTap() {
+        let testViewController = TestButtonCon()
+        navigationController?.pushViewController(
+            testViewController,
+            animated: false
+        )
+    }
 }
-
