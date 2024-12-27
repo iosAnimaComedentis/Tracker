@@ -13,7 +13,7 @@ final class MainViewController: UIViewController {
         dateButton.setTitle(dateString, for: .normal)
         dateButton.titleLabel?.font = UIFont(name: "SF-Pro", size: 17)
         dateButton.backgroundColor = UIColor(hex: "#F0F0F0")
-        dateButton.setTitleColor(.ypBlackDay, for: .normal)
+        dateButton.setTitleColor(.black, for: .normal)
         dateButton.layer.cornerRadius = 8
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         //TODO: зделать экшн
@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
     private let addTrackerButton: UIButton = {
         var addTrackerButton = UIButton()
         addTrackerButton.setImage(UIImage(named: "plus"), for: .normal)
-        addTrackerButton.tintColor = .ypBlackNight
+        
         addTrackerButton.translatesAutoresizingMaskIntoConstraints = false
         //TODO: зделать экшн
         return addTrackerButton
@@ -32,7 +32,7 @@ final class MainViewController: UIViewController {
         label.text = "Трекеры"
         label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         
-        label.textColor = .ypBlackDay
+        label.textColor = .ypBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -110,7 +110,7 @@ final class MainViewController: UIViewController {
     }
    
     private func setupMainView(){
-        view.backgroundColor = .ypWhiteDay
+        view.backgroundColor = .ypWhite
         addSubView()
         setupConstrait()
     }
