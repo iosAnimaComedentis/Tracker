@@ -18,6 +18,7 @@ final class MainViewController: UIViewController {
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         return dateButton
     }()
+    
     private let addTrackerButton: UIButton = {
         let addTrackerButton = UIButton(type: .custom)
         let config = UIImage.SymbolConfiguration(weight: .bold)
@@ -26,6 +27,7 @@ final class MainViewController: UIViewController {
         addTrackerButton.setImage(image, for: .normal)
         return addTrackerButton
     }()
+    
     private let trackerTitle: UILabel = {
         let label = UILabel()
         label.text = "Трекеры"
@@ -34,6 +36,7 @@ final class MainViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     private let searchBar: UISearchBar = {
         let serchBar = UISearchBar()
         serchBar.placeholder = "Поиск"
@@ -41,6 +44,7 @@ final class MainViewController: UIViewController {
         serchBar.translatesAutoresizingMaskIntoConstraints = false
         return serchBar
     }()
+    
     private let nonTrackers: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -100,6 +104,7 @@ final class MainViewController: UIViewController {
         setupMainView()
     }
     
+    /// установка backgroudColor для MainView, добавление элементов и установка констрейтов
     private func setupMainView(){
         view.backgroundColor = .ypWhite
         addSubView()
@@ -132,6 +137,7 @@ final class MainViewController: UIViewController {
             animated: false
         )
     }
+    
     @objc func dateButtonTap() {
         let testViewController = TestButtonCon()
         navigationController?.pushViewController(
