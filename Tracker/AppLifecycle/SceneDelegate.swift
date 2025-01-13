@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let mainViewController = MainViewController()
+        let mainViewController = TrackersViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
         let statisticViewController = StatisticViewController()
         

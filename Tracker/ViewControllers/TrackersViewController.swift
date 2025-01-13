@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainViewController: UIViewController {
+final class TrackersViewController: UIViewController {
     //MARK: Private Properties
     private let dateButton: UIButton = {
         let dateButton = UIButton()
@@ -70,7 +70,7 @@ final class MainViewController: UIViewController {
     
     //MARK: Private Methods
     
-    /// add subView on MainView
+    /// add subView on TrackersViewController
     private func addSubView() {
         view.addSubview(trackerTitle)
         view.addSubview(searchBar)
@@ -101,11 +101,11 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        setupMainView()
+        setupTrackersViewController()
     }
     
-    /// установка backgroudColor для MainView, добавление элементов и установка констрейтов
-    private func setupMainView(){
+    /// установка backgroudColor для TrackersViewController, добавление элементов и установка констрейтов
+    private func setupTrackersViewController(){
         view.backgroundColor = .ypWhite
         addSubView()
         setupConstrait()
