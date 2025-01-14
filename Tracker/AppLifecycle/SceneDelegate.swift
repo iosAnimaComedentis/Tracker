@@ -11,31 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        
-        let mainViewController = TrackersViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
-        let statisticViewController = StatisticViewController()
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [
-            navigationController,
-            statisticViewController
-        ]
-        
-        let tabBarFirstItem = UITabBarItem(
-            title: "Трекеры",
-            image: UIImage(resource: .trackers ),
-            tag: 0
-        )
-        let tabBarSecondtItem = UITabBarItem(
-            title: "Статистика",
-            image: UIImage(resource: .stats),
-            tag: 1
-        )
-        mainViewController.tabBarItem = tabBarFirstItem
-        statisticViewController.tabBarItem = tabBarSecondtItem
-        
-        window?.rootViewController = tabBarController
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
     }
     

@@ -30,10 +30,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		75D764192D36B72F00FA91C3 /* Exceptions for "Tracker" folder in "TrackerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/TrackerTests/TrackerTests.swift,
+			);
+			target = 75D8880F2D1AD3B600D61F31 /* TrackerTests */;
+		};
+		75D7641F2D36B73600FA91C3 /* Exceptions for "Tracker" folder in "TrackerUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/TrackerUITests/TrackerUITests.swift,
+				Tests/TrackerUITests/TrackerUITestsLaunchTests.swift,
+			);
+			target = 75D888192D1AD3B600D61F31 /* TrackerUITests */;
+		};
 		75D888222D1AD3B600D61F31 /* Exceptions for "Tracker" folder in "Tracker" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Tests/TrackerTests/TrackerTests.swift,
+				Tests/TrackerUITests/TrackerUITests.swift,
+				Tests/TrackerUITests/TrackerUITestsLaunchTests.swift,
 			);
 			target = 75D887F62D1AD3B500D61F31 /* Tracker */;
 		};
@@ -44,18 +62,10 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				75D888222D1AD3B600D61F31 /* Exceptions for "Tracker" folder in "Tracker" target */,
+				75D764192D36B72F00FA91C3 /* Exceptions for "Tracker" folder in "TrackerTests" target */,
+				75D7641F2D36B73600FA91C3 /* Exceptions for "Tracker" folder in "TrackerUITests" target */,
 			);
 			path = Tracker;
-			sourceTree = "<group>";
-		};
-		75D888132D1AD3B600D61F31 /* TrackerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TrackerTests;
-			sourceTree = "<group>";
-		};
-		75D8881D2D1AD3B600D61F31 /* TrackerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,10 +98,8 @@
 		75D887EE2D1AD3B500D61F31 = {
 			isa = PBXGroup;
 			children = (
-				75D887F92D1AD3B500D61F31 /* Tracker */,
-				75D888132D1AD3B600D61F31 /* TrackerTests */,
-				75D8881D2D1AD3B600D61F31 /* TrackerUITests */,
 				75D887F82D1AD3B500D61F31 /* Products */,
+				75D887F92D1AD3B500D61F31 /* Tracker */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +151,6 @@
 			dependencies = (
 				75D888122D1AD3B600D61F31 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				75D888132D1AD3B600D61F31 /* TrackerTests */,
-			);
 			name = TrackerTests;
 			packageProductDependencies = (
 			);
@@ -165,9 +170,6 @@
 			);
 			dependencies = (
 				75D8881C2D1AD3B600D61F31 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				75D8881D2D1AD3B600D61F31 /* TrackerUITests */,
 			);
 			name = TrackerUITests;
 			packageProductDependencies = (
@@ -200,11 +202,12 @@
 				};
 			};
 			buildConfigurationList = 75D887F22D1AD3B500D61F31 /* Build configuration list for PBXProject "Tracker" */;
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 75D887EE2D1AD3B500D61F31;
 			minimizedProjectReferenceProxies = 1;
